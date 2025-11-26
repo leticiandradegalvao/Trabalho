@@ -12,7 +12,12 @@ int main (){
 
   cin >> inicializacao;
   
-if (inicializacao)
+if (inicializacao == 0)
+  cout << "Boa sorte!";
+else
+  cout << "Número inválido";
+
+
   return 0;
   
 }
