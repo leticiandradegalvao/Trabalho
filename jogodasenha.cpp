@@ -19,6 +19,7 @@ int criarSenha() {
 }
 
 //validar se tem 4 digitos e se são de 1-6//
+//essa funcao tem que ser bool
 void validarPalpite (int palpite) {
 
 string d4 = to_string(palpite);
@@ -29,13 +30,15 @@ int a,b,c,d;
     return;
   }
   for (int i = 0; i < 4; i++) {
+    //acho melhor nn usar isso
     string digito = d4.substr(i, 1); //separar digitos na string//
 
+    //acho desnecessario esse if pq ele faz a mesma coisa que o de baixo
     if (digito < "0" || digito > "9") {
       cout << "Valor invalido (deve ter somente numeros)\n"; //se o palpite tiver letras ou outros caracteres//
       return;
     }
-    quebraSenha (palpite);
+
     if (a < 1 || a > 6 || b < 1 || b > 6 || c < 1 || c > 6 || d < 1 || d > 6) {
       cout << "Valor invalido. Digite algarismos do intervalo 1-6\n";
       return;
@@ -115,6 +118,7 @@ int main (){
     int palpite;
 
     bool resultado = false;
+    bool validacao = false;
 
   cout << "JOGO DA SENHA" << endl;
   cout << "\nSeja bem vindo!";
@@ -125,17 +129,21 @@ int main (){
    cin >> palpite;
 
    //4 dígitos e 1-6//
-   validarPalpite(palpite); 
+   validacao = validarPalpite(palpite); 
 
-   //chamar funcao verificar tentativas//
-   resultado = comparaSenhaPalpite(senha, palpite);
-     if(resultado == true){
-        cout << "Parabens, voce ganhou!!";
-        c = 10;
-     }
-     if (c == 9){
-         cout << "Acabou as tentativas.";
-     }
+    if(validacao == true){
+      //chamar funcao verificar tentativas//
+      resultado = comparaSenhaPalpite(senha, palpite);
+      if(resultado == true){
+          cout << "Parabens, voce ganhou!!";
+          c = 10;
+       }
+       if (c == 9){
+           cout << "Você perdeu.";
+       }
+    } else {
+      c = c - 1; // isso aqui seria para caso se digitar errado nao contar tentativa, nao sei se conta ou nao
+    }
   }
 
   return 0;
