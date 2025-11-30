@@ -19,7 +19,12 @@ int criarSenha() {
 
 
 //quebrar senha termo por termo//
-
+void quebraSenha (int palpite){
+   int a = palpite/1000;
+   int b = palpite%1000/100;
+   int c = palpite%100/10;
+   int d = palpite%10;
+}
 
 //validar se tem 4 digitos e se são de 1-6//
 void validarPalpite (int palpite) {
@@ -52,14 +57,17 @@ int main (){
   cout << "JOGO DA SENHA" << endl;
   cout << "\nSeja bem vindo!";
   cout << "\nVoce tem 10 tentativas para acertar a senha de 4 digitos" << endl;
-  cout << "Digite a senha: ";
-  cin >> palpite;
 
-  //4 dígitos e 1-6//
-  validarPalpite(palpite); 
+  for(int c = 0; c < 10; c++){//garantir as 10 tentativas
+   cout << "Digite a senha: ";
+   cin >> palpite;
+
+   //4 dígitos e 1-6//
+   validarPalpite(palpite); 
   
-  //chamar quebrar a senha//
-  //chamar funcao verificar tentativas//
+   quebraSenha(palpite);
+   //chamar funcao verificar tentativas//
+  }
 
   return 0;
   
