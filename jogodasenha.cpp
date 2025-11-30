@@ -110,7 +110,7 @@ bool comparaSenhaPalpite(int senha, int palpite){
         cout << "o \n";
         c++;
     } else {
-        if((p4 == s1 && p1_correto == 0) || (p4 == s2 && p2_correto == 0) || (p4 == s2 && p2_correto == 0)){
+        if((p4 == s1 && p1_correto == 0) || (p4 == s2 && p2_correto == 0) || (p4 == s3 && p3_correto == 0)){
         cout << "x \n";
         } else {
         cout << "_ \n"; 
