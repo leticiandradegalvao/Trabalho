@@ -22,22 +22,18 @@ int criarSenha() {
 
 
 //validar se tem 4 digitos e se são de 1-6//
-void validarPalpite (string palpite) {
+void validarPalpite (int palpite) {
+string d4 = to_string(palpite);
 
-  if (palpite.length() != 4) { //4 algarismos//
+  if (d4.length() != 4) { //4 algarismos//
     cout << "Senha invalida (deve ter somente 4 digitos)\n";
     return;
   }
   for (int i = 0; i < 4; i++) {
-    string digito = palpite.substr(i, 1); //separar digitos na string//
+    string digito = d4.substr(i, 1); //separar digitos na string//
 
     if (digito < "0" || digito > "9") {
       cout << "Valor invalido (deve ter somente numeros)\n"; //se o palpite tiver letras ou outros caracteres//
-      return;
-    }
-
-    if (digito < "1" || digito > "6") { //validar 1-6//
-      cout << "O algarismo " << i + 1 << " esta invalido, digite outro valor.\n";
       return;
     }
   }
@@ -51,7 +47,7 @@ int main (){
   //armazenar senha//
     int senha = criarSenha();
 
-    string palpite;
+    int palpite;
 
   cout << "JOGO DA SENHA" << endl;
   cout << "\nSeja bem vindo!";
