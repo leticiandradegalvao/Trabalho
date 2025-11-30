@@ -19,7 +19,6 @@ int criarSenha() {
 }
 
 //validar se tem 4 digitos e se são de 1-6//
-//essa funcao tem que ser bool
 bool validarPalpite(int palpite) {
     
     string digitos = to_string(palpite);
@@ -118,7 +117,7 @@ int main (){
 
   cout << "JOGO DA SENHA" << endl;
   cout << "\nSeja bem vindo!";
-  cout << "\nVoce tem 10 tentativas para acertar a senha de 4 digitos" << endl;
+  cout << "\nVoce tem 10 tentativas para acertar a senha de 4 digitos\nBoa sorte!" << endl;
 
   for(int c = 0; c < 10; c++){//garantir as 10 tentativas
    cout << "Digite o palpite: \n";
@@ -138,7 +137,7 @@ int main (){
            cout << "Você perdeu.";
        }
     } else {
-      c = c - 1; // isso aqui seria para caso se digitar errado nao contar tentativa, nao sei se conta ou nao
+      c = c - 1; 
     }
   }
 
