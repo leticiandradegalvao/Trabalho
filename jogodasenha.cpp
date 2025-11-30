@@ -20,27 +20,31 @@ int criarSenha() {
 
 //validar se tem 4 digitos e se são de 1-6//
 //essa funcao tem que ser bool
-bool validarPalpite(int palpite) {
-    
-    string digitos = to_string(palpite);
-    
-    int d1, d2, d3, d4;
-     d1 = palpite/1000;
-     d2 = palpite%1000/100;
-     d3 = palpite%100/10; 
-     d4 = palpite%10;
+void validarPalpite (int palpite) {
 
-    if (digitos.length() != 4) { //4 algarismos//
-        cout << "Senha invalida (deve ter somente 4 digitos)\n";
-        return false;
+string d4 = to_string(palpite);
+int a,b,c,d;
+
+  if (d4.length() != 4) { //4 algarismos//
+    cout << "Senha invalida (deve ter somente 4 digitos)\n";
+    return;
+  }
+  for (int i = 0; i < 4; i++) {
+    //acho melhor nn usar isso
+    string digito = d4.substr(i, 1); //separar digitos na string//
+
+    //acho desnecessario esse if pq ele faz a mesma coisa que o de baixo
+    if (digito < "0" || digito > "9") {
+      cout << "Valor invalido (deve ter somente numeros)\n"; //se o palpite tiver letras ou outros caracteres//
+      return;
     }
-    
-    if (d1 < 1 || d1 > 6 || d2 < 1 || d2 > 6 || d3 < 1 || d3 > 6 || d4 < 1 || d4 > 6) { //verifica se esta no intervalo 1-6//
-        cout << "Valor invalido. Digite algarismos do intervalo 1-6\n";
-        return false;
+
+    if (a < 1 || a > 6 || b < 1 || b > 6 || c < 1 || c > 6 || d < 1 || d > 6) {
+      cout << "Valor invalido. Digite algarismos do intervalo 1-6\n";
+      return;
     }
-    return true;
-}
+  }
+  }
 
 
 //fazer funcao para verificar tentativas//
@@ -56,11 +60,17 @@ bool comparaSenhaPalpite(int senha, int palpite){
     int p3 = palpite%100/10;
     int p4 = palpite%10;
     
+    int p1_correto = 0;
+    int p2_correto = 0;
+    int p3_correto = 0;
+    int p4_correto = 0;
+    
     if(p1 == s1){
         cout << "o";
+        p1_correto = 1; 
         c++;
     } else {
-        if(p1 == s2 || p1 == s3 || p1 == s4){
+        if((p1 == s2 && p2_correto == 0) || (p1 == s3 && p3_correto == 0) || (p1 == s4 && p4_correto == 0)){
         cout << "x";
         } else {
         cout << "_"; 
@@ -69,9 +79,10 @@ bool comparaSenhaPalpite(int senha, int palpite){
     
     if(p2 == s2){
         cout << "o";
+        int p2_correto = 1;
         c++;
     } else {
-        if(p2 == s1 || p2 == s3 || p2 == s4){
+        if((p2 == s1 && p1_correto == 0) || (p2 == s3 && p3_correto == 0) || (p2 == s4 && p4_correto == 0)){
         cout << "x";
         } else {
         cout << "_"; 
@@ -80,9 +91,10 @@ bool comparaSenhaPalpite(int senha, int palpite){
     
     if(p3 == s3){
         cout << "o";
+        int p3_correto = 1;
         c++;
     } else {
-        if(p3 == s1 || p3 == s2 || p3 == s4){
+        if((p3 == s1 && p1_correto == 0) || (p3 == s2 && p2_correto == 0) || (p3 == s4 && p1_correto == 0)){
         cout << "x";
         } else {
         cout << "_"; 
@@ -91,9 +103,10 @@ bool comparaSenhaPalpite(int senha, int palpite){
     
     if(p4 == s4){
         cout << "o \n";
+        int p4_correto = 1;
         c++;
     } else {
-        if(p4 == s1 || p4 == s2 || p4 == s2){
+        if((p4 == s1 && p1_correto == 0) || (p4 == s2 && p2_correto == 0) || (p4 == s2 && p2_correto == 0)){
         cout << "x \n";
         } else {
         cout << "_ \n"; 
