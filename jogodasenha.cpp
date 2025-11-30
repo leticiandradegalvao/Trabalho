@@ -60,8 +60,21 @@ bool comparaSenhaPalpite(int senha, int palpite){
     int p4_correto = 0;
     
     if(p1 == s1){
-        cout << "o";
         p1_correto = 1; 
+    } 
+    if(p2 == s2){
+        p2_correto = 1; 
+    } 
+    if(p3 == s3){
+        p3_correto = 1; 
+    } 
+    if(p4 == s4){
+        p4_correto = 1; 
+    } 
+    
+    
+    if(p1 == s1){
+        cout << "o";
         c++;
     } else {
         if((p1 == s2 && p2_correto == 0) || (p1 == s3 && p3_correto == 0) || (p1 == s4 && p4_correto == 0)){
@@ -73,7 +86,6 @@ bool comparaSenhaPalpite(int senha, int palpite){
     
     if(p2 == s2){
         cout << "o";
-        int p2_correto = 1;
         c++;
     } else {
         if((p2 == s1 && p1_correto == 0) || (p2 == s3 && p3_correto == 0) || (p2 == s4 && p4_correto == 0)){
@@ -85,10 +97,9 @@ bool comparaSenhaPalpite(int senha, int palpite){
     
     if(p3 == s3){
         cout << "o";
-        int p3_correto = 1;
         c++;
     } else {
-        if((p3 == s1 && p1_correto == 0) || (p3 == s2 && p2_correto == 0) || (p3 == s4 && p1_correto == 0)){
+        if((p3 == s1 && p1_correto == 0) || (p3 == s2 && p2_correto == 0) || (p3 == s4 && p4_correto == 0)){
         cout << "x";
         } else {
         cout << "_"; 
@@ -97,10 +108,9 @@ bool comparaSenhaPalpite(int senha, int palpite){
     
     if(p4 == s4){
         cout << "o \n";
-        int p4_correto = 1;
         c++;
     } else {
-        if((p4 == s1 && p1_correto == 0) || (p4 == s2 && p2_correto == 0) || (p4 == s3 && p3_correto == 0)){
+        if((p4 == s1 && p1_correto == 0) || (p4 == s2 && p2_correto == 0) || (p4 == s2 && p2_correto == 0)){
         cout << "x \n";
         } else {
         cout << "_ \n"; 
