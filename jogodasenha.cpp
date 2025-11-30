@@ -125,7 +125,7 @@ int main (){
 
   cout << "JOGO DA SENHA" << endl;
   cout << "\nSeja bem vindo!";
-  cout << "\nVoce tem 10 tentativas para acertar a senha de 4 digitos\nBoa sorte!" << endl;
+  cout << "\nVoce tem 10 tentativas para acertar a senha de 4 digitos\nBoa sorte!!" << endl;
 
   for(int c = 0; c < 10; c++){//garantir as 10 tentativas
    cout << "Digite o palpite: \n";
