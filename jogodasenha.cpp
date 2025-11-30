@@ -23,20 +23,20 @@ int criarSenha() {
 bool validarPalpite(int palpite) {
     
     string digitos = to_string(palpite);
-    
-    int d1, d2, d3, d4;
+
+    if (digitos.length() != 4) { //4 algarismos//
+        cout << "Senha invalida\n";
+        return false;
+    }
+
+     int d1, d2, d3, d4;
      d1 = palpite/1000;
      d2 = palpite%1000/100;
      d3 = palpite%100/10; 
      d4 = palpite%10;
 
-    if (digitos.length() != 4) { //4 algarismos//
-        cout << "Senha invalida (deve ter somente 4 digitos)\n";
-        return false;
-    }
-    
     if (d1 < 1 || d1 > 6 || d2 < 1 || d2 > 6 || d3 < 1 || d3 > 6 || d4 < 1 || d4 > 6) { //verifica se esta no intervalo 1-6//
-        cout << "Valor invalido. Digite algarismos do intervalo 1-6\n";
+        cout << "Senha invalida.\n";
         return false;
     }
     return true;
