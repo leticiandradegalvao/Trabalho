@@ -54,7 +54,68 @@ int a,b,c,d;
 
 
 //fazer funcao para verificar tentativas//
+bool comparaSenhaPalpite(int senha, int palpite){
+    int c = 0;
+    int s1 = senha/1000;
+    int s2 = senha%1000/100;
+    int s3 = senha%100/10;
+    int s4 = senha%10;
+    
+    int p1 = palpite/1000;
+    int p2 = palpite%1000/100;
+    int p3 = palpite%100/10;
+    int p4 = palpite%10;
+    
+    if(p1 == s1){
+        cout << "o";
+        c++;
+    } else {
+        if(p1 == s2 || p1 == s3 || p1 == s4){
+        cout << "x";
+        } else {
+        cout << "_"; 
+        }
+    }
+    
+    if(p2 == s2){
+        cout << "o";
+        c++;
+    } else {
+        if(p2 == s1 || p2 == s3 || p2 == s4){
+        cout << "x";
+        } else {
+        cout << "_"; 
+        }
+    }
+    
+    if(p3 == s3){
+        cout << "o";
+        c++;
+    } else {
+        if(p3 == s1 || p3 == s2 || p3 == s4){
+        cout << "x";
+        } else {
+        cout << "_"; 
+        }
+    }
+    
+    if(p4 == s4){
+        cout << "o \n";
+        c++;
+    } else {
+        if(p4 == s1 || p4 == s2 || p4 == s2){
+        cout << "x \n";
+        } else {
+        cout << "_ \n"; 
+        }
+    }
 
+    if (c == 4){
+        return true;
+    }else{
+        return false;
+    }
+}
 
 int main (){
   //armazenar senha//
@@ -62,19 +123,29 @@ int main (){
 
     int palpite;
 
+    bool resultado = false;
+
   cout << "JOGO DA SENHA" << endl;
   cout << "\nSeja bem vindo!";
   cout << "\nVoce tem 10 tentativas para acertar a senha de 4 digitos" << endl;
 
   for(int c = 0; c < 10; c++){//garantir as 10 tentativas
-   cout << "Digite a senha: ";
+   cout << "Digite o palpite: \n";
    cin >> palpite;
 
    //4 dígitos e 1-6//
    validarPalpite(palpite); 
-  
-   quebraSenha(palpite);
+
    //chamar funcao verificar tentativas//
+   resultado = comparaSenhaPalpite(senha, palpite);
+     if(resultado == true){
+        cout << "Parabens, voce ganhou!!";
+        c = 10;
+     }
+     if (c == 9){
+         cout << "Acabou as tentativas.";
+     }
+   quebraSenha(palpite);
   }
 
   return 0;
