@@ -45,7 +45,7 @@ int a,b,c,d;
       return;
     }
     quebraSenha (palpite);
-    if (a < 1 || a > 6 || b < 1 || b > 6 || c < 1 || c > 6 || d < 1 || d > 6) {
+    if (a < 1 || a > 6 || b < 1 || b > 6 || c < 1 || c > 6 || d < 1 || d > 6) { //verifica se esta no intervalo 1-6//
       cout << "Valor invalido. Digite algarismos do intervalo 1-6\n";
       return;
     }
