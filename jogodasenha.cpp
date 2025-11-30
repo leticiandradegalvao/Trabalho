@@ -37,7 +37,7 @@ void validarPalpite (string palpite) {
     }
 
     if (digito < "1" || digito > "6") { //validar 1-6//
-      cout << "O algarismo " << i + 1 << " é invalido, digite outro valor.\n";
+      cout << "O algarismo " << i + 1 << " esta invalido, digite outro valor.\n";
       return;
     }
   }
