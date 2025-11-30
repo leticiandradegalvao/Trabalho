@@ -20,30 +20,6 @@ int criarSenha() {
 
 //validar se tem 4 digitos e se são de 1-6//
 //essa funcao tem que ser bool
-<<<<<<< HEAD
-void validarPalpite (int palpite) {
-
-string d4 = to_string(palpite);
-int a,b,c,d;
-
-  if (d4.length() != 4) { //4 algarismos//
-    cout << "Senha invalida (deve ter somente 4 digitos)\n";
-    return;
-  }
-  for (int i = 0; i < 4; i++) {
-    //acho melhor nn usar isso
-    string digito = d4.substr(i, 1); //separar digitos na string//
-
-    //acho desnecessario esse if pq ele faz a mesma coisa que o de baixo
-    if (digito < "0" || digito > "9") {
-      cout << "Valor invalido (deve ter somente numeros)\n"; //se o palpite tiver letras ou outros caracteres//
-      return;
-    }
-
-    if (a < 1 || a > 6 || b < 1 || b > 6 || c < 1 || c > 6 || d < 1 || d > 6) {
-      cout << "Valor invalido. Digite algarismos do intervalo 1-6\n";
-      return;
-=======
 bool validarPalpite(int palpite) {
     
     string digitos = to_string(palpite);
@@ -62,9 +38,7 @@ bool validarPalpite(int palpite) {
     if (d1 < 1 || d1 > 6 || d2 < 1 || d2 > 6 || d3 < 1 || d3 > 6 || d4 < 1 || d4 > 6) { //verifica se esta no intervalo 1-6//
         cout << "Senha invalida.\n";
         return false;
->>>>>>> bc2d979a8c102382d60067e862cd15be11b32668
     }
-  }
   }
 
 
