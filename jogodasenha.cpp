@@ -18,15 +18,6 @@ int criarSenha() {
     return senha;
 }
 
-
-//quebrar senha termo por termo//
-void quebraSenha (int palpite){
-   int a = palpite/1000;
-   int b = palpite%1000/100;
-   int c = palpite%100/10;
-   int d = palpite%10;
-}
-
 //validar se tem 4 digitos e se são de 1-6//
 void validarPalpite (int palpite) {
 
@@ -145,7 +136,6 @@ int main (){
      if (c == 9){
          cout << "Acabou as tentativas.";
      }
-   quebraSenha(palpite);
   }
 
   return 0;
