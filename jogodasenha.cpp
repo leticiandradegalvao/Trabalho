@@ -25,19 +25,19 @@ int criarSenha() {
 void validarPalpite (string palpite) {
 
   if (palpite.length() != 4) { //4 algarismos//
-    cout << "Senha inválida (deve ter somente 4 dígitos)\n";
+    cout << "Senha invalida (deve ter somente 4 digitos)\n";
     return;
   }
   for (int i = 0; i < 4; i++) {
     string digito = palpite.substr(i, 1); //separar digitos na string//
 
     if (digito < "0" || digito > "9") {
-      cout << "Valor inválido (deve ter somente números)\n"; //se o palpite tiver letras ou outros caracteres//
+      cout << "Valor invalido (deve ter somente numeros)\n"; //se o palpite tiver letras ou outros caracteres//
       return;
     }
 
     if (digito < "1" || digito > "6") { //validar 1-6//
-      cout << "O " << i + 1 << " ° algarismo é inválido, digite outro valor.\n";
+      cout << "O algarismo " << i + 1 << " é invalido, digite outro valor.\n";
       return;
     }
   }
