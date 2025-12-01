@@ -152,8 +152,8 @@ int main (){
           cout << "Parabens, voce ganhou!!";
           c = 10;
        }
-       if (c == 9){
-           cout << "Você perdeu.";
+       if (c == 9 && resultado == false){
+           cout << "Voce perdeu.";
        }
     } else {
       c = c - 1; 
