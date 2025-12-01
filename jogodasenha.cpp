@@ -38,6 +38,7 @@ bool validarPalpite(int palpite) {
         cout << "Senha invalida.\n";
         return false;
     }
+  return true;
   }
 
 
